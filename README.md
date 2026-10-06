@@ -199,8 +199,8 @@ Official installation reference: [Running GLPI on Docker](https://help.glpi-proj
 | 03-10-2026 | Initial resource and firewall checks; selected `ubuntu01` as the Docker host | ✅ Completed |
 | 03-10-2026 | Repository overview and initial roadmap prepared | ✅ Completed |
 | 06-10-2026 | GLPI selected; simplified five-phase roadmap drafted for review | ✅ Completed |
-| — | Phase 1 – Docker Fundamentals, Installation & Container Basics | ⏳ Planned |
-| — | Phase 2 – Docker Storage & Container Data | ⏳ Planned |
+| 06-10-2026 | [Phase 1 – Docker Fundamentals, Installation & Container Basics](docs/1-Docker-Fundamentals-Installation-Container-Basics/README.md) | ✅ Completed |
+| — | Phase 2 – Docker Storage & Container Data | 🚧 In Progress |
 | — | Phase 3 – Docker Networking | ⏳ Planned |
 | — | Phase 4 – Docker Compose | ⏳ Planned |
 | — | Phase 5 – GLPI Ticket System with Docker Compose | ⏳ Planned |
