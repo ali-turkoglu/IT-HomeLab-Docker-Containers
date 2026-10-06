@@ -4,7 +4,7 @@
 >
 > This repository documents my Docker and container administration work in a practical HomeLab environment. The project focuses on deploying services, managing containers, working with persistent data, and troubleshooting common problems.
 >
-> **Status:** 🚧 Planning & Preparation
+> **Status:** 🚧 In Progress
 >
 > **Note:** This repository covers **Part 4 – Docker & Containers**. Linux administration is covered in Part 3. Advanced operations, backup automation, monitoring, and security are planned for Part 5. The next practical project will focus on IT support and troubleshooting.
 
@@ -62,9 +62,9 @@ The aim is to prepare a small, working environment and move on to realistic supp
 | Ubuntu Server | Docker host | Existing |
 | SSH & WireGuard | Administration and remote access | Existing |
 | nftables | Existing host firewall and VPN rules | Existing |
-| Docker Engine | Run and manage containers | Planned |
-| Docker Compose | Define and manage services in YAML files | Planned |
-| Nginx | Small reusable example for Docker basics, storage, and networking | Planned |
+| Docker Engine | Run and manage containers | Installed & Verified |
+| Docker Compose | Define and manage services in YAML files | Installed — practice planned |
+| Nginx | Small reusable example for Docker basics, storage, and networking | Tested in Phase 1 |
 | GLPI Community | Ticket system for HomeLab support scenarios | Planned |
 | MySQL | Database for GLPI, following the official Docker example | Planned |
 
@@ -96,7 +96,7 @@ Resource values are from the initial planning checks. Only a small number of con
 
 ### Planned Architecture
 
-The host and WireGuard already exist. Docker, GLPI, and MySQL are planned.
+The Ubuntu host, WireGuard, and Docker Engine are already in place. The GLPI and MySQL deployment shown below is planned.
 
 ```mermaid
 flowchart TD
@@ -156,11 +156,11 @@ Phase folders and links will be added as the work progresses.
 
 This revised five-phase roadmap is the working draft. The first four phases will reuse one small Nginx example. The final phase will apply these skills to GLPI.
 
-### ⏳ Phase 1 – Docker Fundamentals, Installation & Container Basics
+### ✅ [Phase 1 – Docker Fundamentals, Installation & Container Basics](docs/1-Docker-Fundamentals-Installation-Container-Basics/README.md)
 
-Install Docker Engine and Compose, understand images and containers, and run a small Nginx container. Practice listing, starting, stopping, inspecting, removing containers, and reading logs. Verify that existing host services still work.
+I installed Docker Engine and the Compose plugin, tested basic container commands, and ran an Nginx container. I also resolved a container network problem and verified SSH, WireGuard access, and container connectivity after reboot.
 
-### ⏳ Phase 2 – Docker Storage & Container Data
+### 🚧 Phase 2 – Docker Storage & Container Data
 
 Use the same example to work with volumes and bind mounts. Recreate a container, verify which data remains, and check basic file permissions.
 
@@ -199,7 +199,7 @@ Official installation reference: [Running GLPI on Docker](https://help.glpi-proj
 | 03-10-2026 | Initial resource and firewall checks; selected `ubuntu01` as the Docker host | ✅ Completed |
 | 03-10-2026 | Repository overview and initial roadmap prepared | ✅ Completed |
 | 06-10-2026 | GLPI selected; simplified five-phase roadmap drafted for review | ✅ Completed |
-| 06-10-2026 | [Phase 1 – Docker Fundamentals, Installation & Container Basics](docs/1-Docker-Fundamentals-Installation-Container-Basics/README.md) | ✅ Completed |
+| 06-10-2026 | Phase 1 – Docker Fundamentals, Installation & Container Basics | ✅ Completed |
 | — | Phase 2 – Docker Storage & Container Data | 🚧 In Progress |
 | — | Phase 3 – Docker Networking | ⏳ Planned |
 | — | Phase 4 – Docker Compose | ⏳ Planned |
