@@ -160,11 +160,11 @@ This revised five-phase roadmap is the working draft. The first four phases will
 
 I installed Docker Engine and the Compose plugin, tested basic container commands, and ran an Nginx container. I also resolved a container network problem and verified SSH, WireGuard access, and container connectivity after reboot.
 
-### 🚧 Phase 2 – Docker Storage & Container Data
+### ✅ [Phase 2 – Docker Persistent Storage & Portainer](docs/2-Docker-Persistent-Storage-Portainer/README.md)
 
-Use the same example to work with volumes and bind mounts. Recreate a container, verify which data remains, and check basic file permissions.
+I installed Portainer with a named volume for persistent data and a bind mount for Docker access. I accessed it from my MacBook through an SSH tunnel and recreated the container to verify that the administrator account and settings were preserved. Portainer remains available for future Docker administration tasks.
 
-### ⏳ Phase 3 – Docker Networking
+### 🚧 Phase 3 – Docker Networking
 
 Work with a user-defined bridge network, container name resolution, and published ports. Check the firewall interaction and test access from the LAN and WireGuard. Investigate a simple connection problem.
 
@@ -200,8 +200,8 @@ Official installation reference: [Running GLPI on Docker](https://help.glpi-proj
 | 03-10-2026 | Repository overview and initial roadmap prepared | ✅ Completed |
 | 06-10-2026 | GLPI selected; simplified five-phase roadmap drafted for review | ✅ Completed |
 | 06-10-2026 | Phase 1 – Docker Fundamentals, Installation & Container Basics | ✅ Completed |
-| — | Phase 2 – Docker Storage & Container Data | 🚧 In Progress |
-| — | Phase 3 – Docker Networking | ⏳ Planned |
+| 09-10-2026 | Phase 2 – Docker Persistent Storage & Portainer | ✅ Completed |
+| — | Phase 3 – Docker Networking | 🚧 Planned |
 | — | Phase 4 – Docker Compose | ⏳ Planned |
 | — | Phase 5 – GLPI Ticket System with Docker Compose | ⏳ Planned |
 
