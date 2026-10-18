@@ -164,11 +164,11 @@ I installed Docker Engine and the Compose plugin, tested basic container command
 
 I installed Portainer with a named volume for persistent data and a bind mount for Docker access. I accessed it from my MacBook through an SSH tunnel and recreated the container to verify that the administrator account and settings were preserved. Portainer remains available for future Docker administration tasks.
 
-### 🚧 Phase 3 – Docker Networking
+### ✅ [Phase 3 – Docker Networking](docs/3-Docker-Networking/README.md)
 
-Work with a user-defined bridge network, container name resolution, and published ports. Check the firewall interaction and test access from the LAN and WireGuard. Investigate a simple connection problem.
+I created a user-defined bridge network and tested container name resolution and published ports. I resolved a firewall forwarding issue and verified access from the LAN and through WireGuard, including after a server reboot.
 
-### ⏳ Phase 4 – Docker Compose
+### 🚧 Phase 4 – Docker Compose
 
 Move the existing example into a Compose file. Work with environment variables, persistent storage, restart policies, logs, and container recreation. Keep the configuration small and reusable.
 
@@ -201,8 +201,8 @@ Official installation reference: [Running GLPI on Docker](https://help.glpi-proj
 | 06-10-2026 | GLPI selected; simplified five-phase roadmap drafted for review | ✅ Completed |
 | 06-10-2026 | Phase 1 – Docker Fundamentals, Installation & Container Basics | ✅ Completed |
 | 09-10-2026 | Phase 2 – Docker Persistent Storage & Portainer | ✅ Completed |
-| — | Phase 3 – Docker Networking | 🚧 Planned |
-| — | Phase 4 – Docker Compose | ⏳ Planned |
+| 18-10-2026 | Phase 3 – Docker Networking | ✅ Completed |
+| — | Phase 4 – Docker Compose | 🚧 Planned |
 | — | Phase 5 – GLPI Ticket System with Docker Compose | ⏳ Planned |
 
 Actual completion dates will be added after each phase has been implemented and tested.
