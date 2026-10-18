@@ -111,7 +111,8 @@ I added a similar forwarding rule for traffic arriving on `wg0` from the WireGua
 
 I disabled Wi-Fi on the iPhone, enabled WireGuard, and opened Nginx through Ubuntu's LAN address using mobile data. The page loaded successfully without an SSH tunnel.
 
-![Nginx through WireGuard over mobile data](images/5-nginx-wireguard-access.png)
+<img src="images/5-nginx-wireguard-access.png" alt="Nginx through WireGuard over mobile data" width="320">
+
 
 ---
 
