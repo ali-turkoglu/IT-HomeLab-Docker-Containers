@@ -190,4 +190,4 @@ Portainer is running and accessible from the MacBook through an SSH tunnel. Its 
 
 | Previous | Home | Next |
 |:--------:|:----:|:----:|
-| ⬅️ [Phase 1 – Docker Fundamentals, Installation & Container Basics](../1-Docker-Fundamentals-Installation-Container-Basics/README.md)| 🏠 [Home](../../README.md) | ➡️ Phase 3 - Phase 3 – Docker Networking ***Coming Soon***|
+| ⬅️ [Phase 1 – Docker Fundamentals, Installation & Container Basics](../1-Docker-Fundamentals-Installation-Container-Basics/README.md)| 🏠 [Home](../../README.md) | ➡️ [Phase 3 – Docker Networking](../3-Docker-Networking/README.md)|
