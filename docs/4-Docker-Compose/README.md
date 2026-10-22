@@ -24,7 +24,7 @@ I checked the configuration with `docker compose config` before starting the ser
 
 The first HTTP test returned `200 OK` on port `8081`.
 
-![Nginx running through Docker Compose with a successful HTTP test](1-compose-nginx-verification.png)
+![Nginx running through Docker Compose with a successful HTTP test](images/1-compose-nginx-verification.png)
 
 The final Compose configuration was:
 
@@ -59,7 +59,7 @@ LAB_ENV=homelab
 
 I changed `WEB_PORT` from `8081` to `8082` and applied the change with `docker compose up -d`. The container ID changed, and the updated HTML page was still available through the bind mount.
 
-![Different container IDs and the preserved HTML page on port 8082](3-compose-container-recreation.png)
+![Different container IDs and the preserved HTML page on port 8082](images/3-compose-container-recreation.png)
 
 I also tested `stop` and `start`. The container changed from `Exited` to `Up`. With `down`, Compose removed the project's container and default network. Running `up -d` created them again, while the HTML files on Ubuntu remained available.
 
@@ -69,7 +69,7 @@ I requested `/missing.html` to test a missing file. The container was still `Up`
 
 The request reached Nginx successfully. The cause was the missing file, so no network or port change was needed. A final request to the main page returned `200 OK`.
 
-![Missing-file error in the logs and a successful response from the main page](4-compose-404-troubleshooting.png)
+![Missing-file error in the logs and a successful response from the main page](images/4-compose-404-troubleshooting.png)
 
 ## Commands Used
 
