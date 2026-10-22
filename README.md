@@ -168,11 +168,11 @@ I installed Portainer with a named volume for persistent data and a bind mount f
 
 I created a user-defined bridge network and tested container name resolution and published ports. I resolved a firewall forwarding issue and verified access from the LAN and through WireGuard, including after a server reboot.
 
-### 🚧 Phase 4 – Docker Compose
+### ✅ [Phase 4 – Docker Compose](docs/4-Docker-Compose/README.md)
 
-Move the existing example into a Compose file. Work with environment variables, persistent storage, restart policies, logs, and container recreation. Keep the configuration small and reusable.
+I managed Nginx with a Compose file, used environment variables and a read-only bind mount, and tested service management and container recreation. I verified that the web content remained available and checked an HTTP 404 error through the logs.
 
-### ⏳ Phase 5 – GLPI Ticket System with Docker Compose
+### 🚧 Phase 5 – GLPI Ticket System with Docker Compose
 
 Deploy GLPI and MySQL using the official Docker example as a starting point. Configure persistent storage, database credentials, and access from the HomeLab.
 
@@ -202,8 +202,8 @@ Official installation reference: [Running GLPI on Docker](https://help.glpi-proj
 | 06-10-2026 | Phase 1 – Docker Fundamentals, Installation & Container Basics | ✅ Completed |
 | 09-10-2026 | Phase 2 – Docker Persistent Storage & Portainer | ✅ Completed |
 | 18-10-2026 | Phase 3 – Docker Networking | ✅ Completed |
-| — | Phase 4 – Docker Compose | 🚧 Planned |
-| — | Phase 5 – GLPI Ticket System with Docker Compose | ⏳ Planned |
+| 22-10-2026 | Phase 4 – Docker Compose | ✅ Planned |
+| — | Phase 5 – GLPI Ticket System with Docker Compose | 🚧 Planned |
 
 Actual completion dates will be added after each phase has been implemented and tested.
 
