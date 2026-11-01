@@ -211,15 +211,18 @@ This Docker repository will document installation and configuration. The support
 
 ## IT-HomeLab Series
 
-| Part | Focus |
-|:---|:---|
-| Part 1 | [Windows Infrastructure](https://github.com/ali-turkoglu/IT-HomeLab-Windows-Infrastructure) |
-| Part 2 | [Cloud & Identity](https://github.com/ali-turkoglu/IT-HomeLab-Cloud-Identity) |
-| Part 3 | [Linux Administration](https://github.com/ali-turkoglu/IT-HomeLab-Linux-Administration) |
-| **Part 4** | ***Docker & Containers – this repository*** |
-| Part 5 | Linux Operations – planned |
+This repository is Part 4 of my IT-HomeLab Series.
 
-**Related project:** [IT Support & Troubleshooting Lab][support-lab] – planned as the next practical focus.
+Each repository focuses on a different area of IT administration while remaining part of the same connected HomeLab environment.
+
+| Part | Focus | Status | Repository |
+|:---|:---|:---:|:---|
+| **Part 1** | Windows Infrastructure | ✅ Completed | [IT-HomeLab-Windows-Infrastructure](https://github.com/ali-turkoglu/IT-HomeLab-Windows-Infrastructure) |
+| **Part 2** | Cloud Identity & Microsoft 365 | ✅ Completed | [IT-HomeLab-Cloud-Identity](https://github.com/ali-turkoglu/IT-HomeLab-Cloud-Identity) |
+| **Part 3** | Linux Administration | ✅ Completed | [IT-HomeLab-Linux-Administration](https://github.com/ali-turkoglu/IT-HomeLab-Linux-Administration) |
+| **Part 4** | Docker & Containers | ✅ Completed | **IT-HomeLab-Docker-Containers** (Current Repository) |
+| **Related Project** | IT Support & Troubleshooting Lab | ⏳ Planned | Repository coming soon |
+| **Part 5** | Linux Operations | ⏳ Planned | Repository not created yet |
 
 [← Back to IT HomeLab Journey](https://github.com/ali-turkoglu/IT-HomeLab-Journey)
 
