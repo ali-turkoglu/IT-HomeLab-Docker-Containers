@@ -6,7 +6,7 @@
 >
 > **Status:** ✅ Completed
 >
-> **Note:** This repository covers **Part 4 – Docker & Containers**. Linux administration is covered in Part 3. Advanced operations, backup automation, monitoring, and security are planned for Part 5. The next practical project will focus on IT support and troubleshooting.
+> **Note:** This repository covers **Part 4 – Docker & Containers**. Linux administration is covered in Part 3. Part 5 will focus on IT support and troubleshooting using GLPI. Advanced operations, backup automation, monitoring, and security are planned for Part 6 – Linux Operations.
 
 ---
 
@@ -197,15 +197,17 @@ The documentation includes short explanations, relevant commands, useful screens
 
 ## Next Project
 
-The next practical step will be **IT Support & Troubleshooting Lab**, maintained in a separate GitHub repository.
+The next practical step will be **Part 5 – IT Support & Troubleshooting Lab**, maintained in a dedicated GitHub repository with a separate page for each case.
 
-I will use GLPI to record simulated user incidents and requests, investigate them in the HomeLab, verify the solution, and close the ticket. Examples include shared-folder access problems, locked accounts, DNS failures, printing problems, and stopped services.
+I will use GLPI to record simulated user incidents and service requests, investigate them in the existing HomeLab, verify the solution, and close the ticket.
 
-Each case will include the ticket summary, symptoms, checks, cause, solution, and verification. Screenshots will show useful evidence, and all cases will be clearly labelled as HomeLab simulations.
+Each case will include the reported issue, diagnostic checks, findings, the solution, and final verification. Selected screenshots will provide supporting evidence, and all cases will be clearly labelled as HomeLab simulations.
 
-This Docker repository will document installation and configuration. The support repository will document the investigations and solutions.
+The repository overview and case summaries will be in English. Detailed case documentation and GLPI ticket notes will be in German.
 
-**Part 5 – Linux Operations** remains planned for deeper work on backup, monitoring, logging, security, and maintenance. It is not a requirement for starting the support lab; operational work can follow needs found during the scenarios.
+This Docker repository documents the container environment and GLPI deployment. Part 5 will document practical investigations, solutions, and user communication.
+
+**Part 6 – Linux Operations** remains planned for deeper work on backup, monitoring, logging, security, and maintenance.
 
 ---
 
