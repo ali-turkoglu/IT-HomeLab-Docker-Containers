@@ -114,4 +114,4 @@ The Nginx settings are now stored in a reusable Compose file. I verified configu
 
 | Previous | Home | Next |
 |:--------:|:----:|:----:|
-| ⬅️ [Phase 3 – Docker Networking](../3-Docker-Networking/README.md)| 🏠 [Home](../../README.md) | ➡️ Phase 5 – GLPI Ticket System with Docker Compose - ***Coming Soon***|
+| ⬅️ [Phase 3 – Docker Networking](../3-Docker-Networking/README.md)| 🏠 [Home](../../README.md) | ➡️ [Phase 5 – GLPI Ticket System with Docker Compose](../5-GLPI-Ticket-System-with-Docker-Compose/README.md)|
