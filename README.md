@@ -4,7 +4,7 @@
 >
 > This repository documents my Docker and container administration work in a practical HomeLab environment. The project focuses on deploying services, managing containers, working with persistent data, and troubleshooting common problems.
 >
-> **Status:** 🚧 In Progress
+> **Status:** ✅ Completed
 >
 > **Note:** This repository covers **Part 4 – Docker & Containers**. Linux administration is covered in Part 3. Advanced operations, backup automation, monitoring, and security are planned for Part 5. The next practical project will focus on IT support and troubleshooting.
 
@@ -30,13 +30,13 @@
 
 In Part 3, I configured an Ubuntu Server and worked with Linux users, permissions, services, networking, SSH, WireGuard, and Active Directory integration.
 
-This project builds on that environment. I will use the existing `ubuntu01` server to run and manage a small number of containers.
+In this project, I used the existing \ubuntu01 `server` to install Docker and work with container administration.
 
-The focus is on common system administration tasks: deploying a service, changing its configuration, checking logs, managing data, and solving connection problems.
+I started with Docker commands, container storage, and networking. I then used Docker Compose and Portainer to manage services and deployed GLPI with a MySQL database.
 
-I will start with Docker commands, then use Compose to deploy GLPI and its database. GLPI will be the ticket system for a separate **IT Support & Troubleshooting Lab**.
+I tested container recreation, persistent data, network access, troubleshooting, and basic backups.
 
-The aim is to prepare a small, working environment and move on to realistic support scenarios. New services will be added only when a practical task needs them.
+GLPI is now available as the ticket system for a separate **IT Support & Troubleshooting Lab**. This project provides the container environment for future support scenarios.
 
 ---
 
@@ -49,7 +49,7 @@ The aim is to prepare a small, working environment and move on to realistic supp
 - Configure container networks and published ports.
 - Manage services with Docker Compose.
 - Deploy GLPI and its database with persistent storage.
-- Verify a basic backup and restore before keeping support records.
+- Create basic backups of application files and database data, and check their integrity.
 - Prepare the ticket system for practical IT support scenarios.
 
 ---
@@ -61,14 +61,13 @@ The aim is to prepare a small, working environment and move on to realistic supp
 | Proxmox VE | Virtualization platform | Existing |
 | Ubuntu Server | Docker host | Existing |
 | SSH & WireGuard | Administration and remote access | Existing |
-| nftables | Existing host firewall and VPN rules | Existing |
+| nftables | Host firewall and network access rules | Configured |
 | Docker Engine | Run and manage containers | Installed & Verified |
-| Docker Compose | Define and manage services in YAML files | Installed — practice planned |
-| Nginx | Small reusable example for Docker basics, storage, and networking | Tested in Phase 1 |
-| GLPI Community | Ticket system for HomeLab support scenarios | Planned |
-| MySQL | Database for GLPI, following the official Docker example | Planned |
-
-Docker CLI and Compose will be used for administration. The initial setup will use GLPI and its database without extra management platforms. Compatible image versions will be checked before installation.
+| Docker Compose | Define and manage multi-container services | Installed & Tested |
+| Portainer | Web-based container and stack management | Installed & Tested |
+| Nginx | Container basics, storage, networking, and Compose practice | Tested |
+| GLPI 11.0.12 | HomeLab ticket system | Deployed & Tested |
+| MySQL 8.4 | Database for GLPI | Deployed & Tested |
 
 ---
 
@@ -81,8 +80,7 @@ Docker CLI and Compose will be used for administration. The initial setup will u
 | Hypervisor | Proxmox VE |
 | Docker host | Existing Ubuntu Server VM: `ubuntu01` |
 | VM CPU | 2 vCPU |
-| VM memory reported by Linux | Approximately 3.3 GiB during the initial check |
-| Available VM memory | Approximately 2.9 GiB during the initial check |
+| VM memory | 2–4 GiB with Proxmox memory ballooning |
 | System filesystem | 30 GB, approximately 22 GB free |
 | Additional storage | Approximately 24 GB mounted at `/srv/data` |
 | Administration | SSH from MacBook |
@@ -94,9 +92,7 @@ Resource values are from the initial planning checks. Only a small number of con
 
 ## Architecture
 
-### Planned Architecture
-
-The Ubuntu host, WireGuard, and Docker Engine are already in place. The GLPI and MySQL deployment shown below is planned.
+The Ubuntu host, WireGuard, and Docker Engine are already in place. The GLPI and MySQL deployment shown below is complete.
 
 ```mermaid
 flowchart TD
@@ -106,7 +102,7 @@ flowchart TD
     subgraph Proxmox["Proxmox VE - existing host"]
         subgraph Ubuntu["ubuntu01 - existing Ubuntu VM"]
             WG["WireGuard - existing VPN"]
-            subgraph Docker["Docker Compose project - planned"]
+            subgraph Docker["Docker Compose project"]
                 GLPI["GLPI application"]
                 DB["MySQL database"]
                 GLPI -->|Internal container network| DB
@@ -123,19 +119,13 @@ flowchart TD
     Remote -->|VPN connection| WG
 ```
 
-Only the application port will be published for user access. MySQL will remain on the container network. Existing host firewall rules and access will be verified during deployment.
+Docker runs inside the existing `ubuntu01` VM on Proxmox.
 
-Docker will run inside the existing `ubuntu01` VM on Proxmox. This avoids the extra resource use of a separate Docker VM.
+GLPI and MySQL run in the same Docker Compose stack, managed through Portainer. They communicate over an internal Docker network, and MySQL has no published host port.
 
-The server already provides WireGuard access and uses Active Directory authentication through SSSD. These services will remain in place. Containers will not require domain membership for the planned exercises.
+Both services use bind mounts under `/srv/data/glpi/` for persistent data. GLPI is accessible from the LAN and through WireGuard VPN. Access is controlled using the existing nftables firewall configuration.
 
-Before installation, I will review the persistent nftables configuration and prepare a recovery point. After installation, I will test SSH, WireGuard, AD authentication, and container connectivity.
-
-Application access will initially use the LAN and WireGuard. Published ports and Docker's firewall rules will be checked alongside the existing firewall configuration.
-
-GLPI and MySQL will run as separate services in one Compose project. The database will be reachable through the container network without publishing its port to the LAN. Application files and database data will use persistent storage. The separate `/srv/data` filesystem is available; exact storage locations will be decided during implementation.
-
-GLPI will initially use local requester and technician accounts. Existing host AD authentication will remain separate from GLPI login. Resource use will be measured before the system is used for ongoing support work.
+The Ubuntu server also uses Active Directory authentication through SSSD. GLPI uses separate local accounts for the helpdesk tests.
 
 ---
 
@@ -148,13 +138,11 @@ GLPI will initially use local requester and technician accounts. Existing host A
 | `docs/<phase>/images/` | Selected screenshots |
 | `docs/<phase>/` | Relevant Compose files and other configuration examples |
 
-Phase folders and links will be added as the work progresses.
-
 ---
 
 ## Project Roadmap
 
-This revised five-phase roadmap is the working draft. The first four phases will reuse one small Nginx example. The final phase will apply these skills to GLPI.
+This project was completed in five phases. The first four phases covered Docker fundamentals, persistent storage, networking, and Docker Compose. The final phase used these skills to deploy and test GLPI with MySQL.
 
 ### ✅ [Phase 1 – Docker Fundamentals, Installation & Container Basics](docs/1-Docker-Fundamentals-Installation-Container-Basics/README.md)
 
@@ -172,23 +160,15 @@ I created a user-defined bridge network and tested container name resolution and
 
 I managed Nginx with a Compose file, used environment variables and a read-only bind mount, and tested service management and container recreation. I verified that the web content remained available and checked an HTTP 404 error through the logs.
 
-### 🚧 Phase 5 – GLPI Ticket System with Docker Compose
+### ✅ [Phase 5 – GLPI Ticket System with Docker Compose](docs/5-GLPI-Ticket-System-with-Docker-Compose/README.md)
 
-Deploy GLPI and MySQL using the official Docker example as a starting point. Configure persistent storage, database credentials, and access from the HomeLab.
+I deployed GLPI and MySQL using Docker Compose and Portainer, with persistent storage for application files and database data.
 
-Create a requester account, a technician account, and a few support categories. Test the complete process by opening, assigning, updating, resolving, and closing a sample ticket.
+I configured requester and technician accounts, created ITIL categories, and tested a complete ticket workflow from creation to closure.
 
-Before moving to support scenarios:
+I verified data persistence after container recreation and a host reboot, checked resource usage, and created basic database and file backups. I also tested GLPI access from the LAN and through WireGuard VPN, including firewall restrictions.
 
-- Verify that tickets and attachments remain after container recreation.
-- Check service startup after a host reboot and recheck existing host services.
-- Measure memory and disk use with the application running.
-- Back up the database and required application files, then verify recovery using test data.
-- Save the Compose configuration and a short set of administration commands.
-
-GLPI will be the ticket system for HomeLab support scenarios. These scenarios, including troubleshooting steps and verified solutions, will be documented in a separate repository: [IT Support & Troubleshooting Lab][support-lab].
-
-Official installation reference: [Running GLPI on Docker](https://help.glpi-project.org/tutorials/procedures/running_glpi_on_docker).
+GLPI is now available for future HomeLab support scenarios. These scenarios and their troubleshooting steps will be documented in a separate repository: [IT Support & Troubleshooting Lab][support-lab].
 
 ---
 
@@ -202,18 +182,16 @@ Official installation reference: [Running GLPI on Docker](https://help.glpi-proj
 | 06-10-2026 | Phase 1 – Docker Fundamentals, Installation & Container Basics | ✅ Completed |
 | 09-10-2026 | Phase 2 – Docker Persistent Storage & Portainer | ✅ Completed |
 | 18-10-2026 | Phase 3 – Docker Networking | ✅ Completed |
-| 22-10-2026 | Phase 4 – Docker Compose | ✅ Planned |
-| — | Phase 5 – GLPI Ticket System with Docker Compose | 🚧 Planned |
-
-Actual completion dates will be added after each phase has been implemented and tested.
+| 22-10-2026 | Phase 4 – Docker Compose | ✅ Completed |
+| 01-11-2026 | Phase 5 – GLPI Ticket System with Docker Compose | ✅ Completed |
 
 ---
 
 ## Documentation Approach
 
-Each phase will record what I configured, why it was needed, how I tested it, and what I learned. Notes will stay short and focus on actual work and useful results.
+Each phase documents what I configured, why it was needed, how I tested it, and what I learned.
 
-The documentation will include short explanations, relevant commands, useful screenshots, and any troubleshooting results. Passwords, tokens, and sensitive connection details will not be published.
+The documentation includes short explanations, relevant commands, useful screenshots, and troubleshooting results. Passwords, tokens, and sensitive connection details are not published.
 
 ---
 
@@ -238,7 +216,7 @@ This Docker repository will document installation and configuration. The support
 | Part 1 | [Windows Infrastructure](https://github.com/ali-turkoglu/IT-HomeLab-Windows-Infrastructure) |
 | Part 2 | [Cloud & Identity](https://github.com/ali-turkoglu/IT-HomeLab-Cloud-Identity) |
 | Part 3 | [Linux Administration](https://github.com/ali-turkoglu/IT-HomeLab-Linux-Administration) |
-| **Part 4** | **Docker & Containers – this repository** |
+| **Part 4** | ***Docker & Containers – this repository*** |
 | Part 5 | Linux Operations – planned |
 
 **Related project:** [IT Support & Troubleshooting Lab][support-lab] – planned as the next practical focus.
