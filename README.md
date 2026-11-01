@@ -223,8 +223,8 @@ Each repository focuses on a different area of IT administration while remaining
 | **Part 2** | Cloud Identity & Microsoft 365 | ✅ Completed | [IT-HomeLab-Cloud-Identity](https://github.com/ali-turkoglu/IT-HomeLab-Cloud-Identity) |
 | **Part 3** | Linux Administration | ✅ Completed | [IT-HomeLab-Linux-Administration](https://github.com/ali-turkoglu/IT-HomeLab-Linux-Administration) |
 | **Part 4** | Docker & Containers | ✅ Completed | **IT-HomeLab-Docker-Containers** (Current Repository) |
-| **Related Project** | IT Support & Troubleshooting Lab | ⏳ Planned | Repository coming soon |
-| **Part 5** | Linux Operations | ⏳ Planned | Repository not created yet |
+| **Part 5** | IT Support & Troubleshooting Lab | ⏳ Planned | Repository coming soon |
+| **Part 6** | Linux Operations | ⏳ Planned | Repository not created yet |
 
 [← Back to IT HomeLab Journey](https://github.com/ali-turkoglu/IT-HomeLab-Journey)
 
