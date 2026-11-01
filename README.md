@@ -30,7 +30,7 @@
 
 In Part 3, I configured an Ubuntu Server and worked with Linux users, permissions, services, networking, SSH, WireGuard, and Active Directory integration.
 
-In this project, I used the existing \ubuntu01 `server` to install Docker and work with container administration.
+In this project, I used the existing `ubuntu01` server to install Docker and work with container administration.
 
 I started with Docker commands, container storage, and networking. I then used Docker Compose and Portainer to manage services and deployed GLPI with a MySQL database.
 
